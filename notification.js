@@ -8,15 +8,23 @@ function sendInAppNotification(userId, message, eventType) {
         timestamp: new Date().toISOString(),
         status: 'DELIVERED'
     };
-    
-    console.log(`[IN-APP NOTIFICATION] To User ${userId}: ${message}`);
+
+    console.log(
+        `[IN-APP NOTIFICATION] To User ${userId}: ${message}`
+    );
+
     return notification;
 }
 
-// Placeholder for future expansion (SMS / USSD / IVR)
-function sendSMSNotification(phoneNumber, message) {
-    console.log(`[SMS - Future Channel] Sending to ${phoneNumber}: ${message}`);
-    return { channel: 'SMS', status: 'PENDING_INTEGRATION' };
-}
+// Placeholder for future expansion
+// Future versions can support:
+// - Email notifications
+// - SMS notifications
+// - Push notifications
+// - Notification preferences
+// - Priority levels
+// - Notification history
 
-module.exports = { sendInAppNotification, sendSMSNotification };
+module.exports = {
+    sendInAppNotification
+};
